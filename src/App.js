@@ -1,10 +1,16 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Layout from "modules/pages/components/Layout";
+import ItemCardUser from "modules/features/components/ItemCardUser";
 
 function App() {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <Layout>
+        {" "}
+        <Routes>
+          <Route path="/" element={<ItemCardUser />}></Route>
+        </Routes>
+      </Layout>
     </div>
   );
 }
