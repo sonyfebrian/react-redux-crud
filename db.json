@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fistname": "json-server",
+      "lastname": "typicode",
+      "username": "json",
+      "email": "aa@gmail.com",
+      "password": "123444",
+      "currentPassword": "123444",
+      "expiredDate": "23-09-90",
+      "groupAccess": "admin"
+    },
+    {
+      "id": 2,
+      "fistname": "json-server",
+      "lastname": "typicode",
+      "username": "json",
+      "email": "aa@gmail.com",
+      "password": "123444",
+      "currentPassword": "123444",
+      "expiredDate": "23-09-90",
+      "groupAccess": "admin"
+    }
+  ]
+}
