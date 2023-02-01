@@ -33,7 +33,7 @@ To make a production build, simply run on _react-src_ folder via the terminal.
 npm run build
 ```
 
-## Make sure JSON server is running.
+# Make sure JSON server is running.
 
 Run the _json server_ for Fake API. It listens on port 4000.
 
@@ -42,3 +42,9 @@ npm run json-server
 ```
 
 After running the above command , a 'db.json' file gets created, so this file act as a database.
+
+# access our fake JSON API
+
+```bash
+http://localhost:4000/users'
+```
