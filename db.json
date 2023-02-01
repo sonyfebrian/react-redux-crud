@@ -1,17 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "firstname": "json-server",
-      "lastname": "typicode",
-      "username": "json",
-      "email": "aa@gmail.com",
-      "password": "123444",
-      "currentPassword": "123444",
-      "expiredDate": "23-09-90",
-      "groupAccess": "admin"
-    },
-    {
       "id": 2,
       "firstname": "json-server",
       "lastname": "typicode",
@@ -24,158 +13,14 @@
     },
     {
       "id": 3,
-      "firstname": "json-server",
-      "lastname": "typicode",
-      "username": "json",
-      "email": "aa@gmail.com",
-      "password": "123444",
-      "currentPassword": "123444",
-      "expiredDate": "23-09-90",
-      "groupAccess": "admin"
-    },
-    {
-      "id": 4,
-      "firstname": "json-server",
-      "lastname": "typicode",
-      "username": "json",
-      "email": "aa@gmail.com",
-      "password": "123444",
-      "currentPassword": "123444",
-      "expiredDate": "23-09-90",
-      "groupAccess": "admin"
-    },
-    {
-      "id": 5,
-      "firstname": "json-server",
-      "lastname": "typicode",
-      "username": "json",
-      "email": "aa@gmail.com",
-      "password": "123444",
-      "currentPassword": "123444",
-      "expiredDate": "23-09-90",
-      "groupAccess": "admin"
-    },
-    {
-      "id": 6,
-      "firstname": "json-server",
-      "lastname": "typicode",
-      "username": "json",
-      "email": "aa@gmail.com",
-      "password": "123444",
-      "currentPassword": "123444",
-      "expiredDate": "23-09-90",
-      "groupAccess": "admin"
-    },
-    {
-      "id": 7,
-      "firstname": "json-server",
-      "lastname": "typicode",
-      "username": "json",
-      "email": "aa@gmail.com",
-      "password": "123444",
-      "currentPassword": "123444",
-      "expiredDate": "23-09-90",
-      "groupAccess": "admin"
-    },
-    {
-      "id": 8,
-      "firstname": "json-server",
-      "lastname": "typicode",
-      "username": "json",
-      "email": "aa@gmail.com",
-      "password": "123444",
-      "currentPassword": "123444",
-      "expiredDate": "23-09-90",
-      "groupAccess": "admin"
-    },
-    {
-      "id": 9,
-      "firstname": "json-server",
-      "lastname": "typicode",
-      "username": "json",
-      "email": "aa@gmail.com",
-      "password": "123444",
-      "currentPassword": "123444",
-      "expiredDate": "23-09-90",
-      "groupAccess": "admin"
-    },
-    {
-      "id": 10,
-      "firstname": "json-server",
-      "lastname": "typicode",
-      "username": "json",
-      "email": "aa@gmail.com",
-      "password": "123444",
-      "currentPassword": "123444",
-      "expiredDate": "23-09-90",
-      "groupAccess": "admin"
-    },
-    {
-      "id": 11,
-      "firstname": "json-server",
-      "lastname": "typicode",
-      "username": "json",
-      "email": "aa@gmail.com",
-      "password": "123444",
-      "currentPassword": "123444",
-      "expiredDate": "23-09-90",
-      "groupAccess": "admin"
-    },
-    {
-      "id": 12,
-      "firstname": "json-server",
-      "lastname": "typicode",
-      "username": "json",
-      "email": "aa@gmail.com",
-      "password": "123444",
-      "currentPassword": "123444",
-      "expiredDate": "23-09-90",
-      "groupAccess": "admin"
-    },
-    {
-      "id": 13,
-      "firstname": "json-server",
-      "lastname": "typicode",
-      "username": "json",
-      "email": "aa@gmail.com",
-      "password": "123444",
-      "currentPassword": "123444",
-      "expiredDate": "23-09-90",
-      "groupAccess": "admin"
-    },
-    {
-      "id": 14,
-      "firstname": "json-server",
-      "lastname": "typicode",
-      "username": "json",
-      "email": "aa@gmail.com",
-      "password": "123444",
-      "currentPassword": "123444",
-      "expiredDate": "23-09-90",
-      "groupAccess": "admin"
-    },
-    {
-      "id": 15,
-      "firstname": "json-server",
-      "lastname": "typicode",
-      "username": "json",
-      "email": "aa@gmail.com",
-      "password": "123444",
-      "currentPassword": "123444",
-      "expiredDate": "23-09-90",
-      "groupAccess": "admin"
-    },
-
-    {
-      "id": 16,
-      "firstname": "json-server",
-      "lastname": "typicode",
-      "username": "json",
-      "email": "aa@gmail.com",
-      "password": "123444",
-      "currentPassword": "123444",
-      "expiredDate": "23-09-90",
-      "groupAccess": "admin"
+      "firstname": "Johm",
+      "lastname": "Der",
+      "username": "Deo90",
+      "email": "de@kim.io",
+      "password": "qwe!@#Q",
+      "currentPassword": "qwe!@#Q",
+      "expiredDate": "2023-02-28",
+      "groupAccess": "AppTesters"
     }
   ]
 }

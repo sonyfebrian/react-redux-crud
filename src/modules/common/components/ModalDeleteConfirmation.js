@@ -8,8 +8,24 @@ export default function ModalDeleteConfirmation(props) {
           {/*content*/}
           <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
             {/*header*/}
-            <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-              <h3 className="text-3xl font-semibold">{props.title}</h3>
+            <div className="flex items-start justify-between p-5  border-solid border-slate-200 rounded-t">
+              <div className="flex items-center justify-center flex-none w-12 h-12 mx-auto bg-red-100 rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6 text-red-600"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-lg font-medium text-gray-800 ml-3 mt-2">
+                {props.title}
+              </h3>
               <button
                 className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                 onClick={() => {
@@ -21,14 +37,9 @@ export default function ModalDeleteConfirmation(props) {
                 </span>
               </button>
             </div>
-            {/*body*/}
-            <div className="relative p-6 flex-auto">
-              <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                {props.content}
-              </p>
-            </div>
+
             {/*footer*/}
-            <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+            <div className="flex items-center justify-end p-6  border-solid border-slate-200 rounded-b">
               <button
                 className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
@@ -39,7 +50,7 @@ export default function ModalDeleteConfirmation(props) {
                 Close
               </button>
               <button
-                className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                className="text-white bg-red-600 active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
                 onClick={() => {
                   props.confirmDeleteModalHandler();

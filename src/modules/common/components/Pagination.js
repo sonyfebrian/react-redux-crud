@@ -14,20 +14,6 @@ export default function Pagination({
   return (
     <>
       <div className="py-2">
-        <div>
-          <p className="text-sm text-gray-700">
-            Showing
-            <span className="font-medium">
-              {" "}
-              {currentPage * postPerPage - 5}{" "}
-            </span>
-            to
-            <span className="font-medium"> {currentPage * postPerPage} </span>
-            of
-            <span className="font-medium"> {totalPosts} </span>
-            results
-          </p>
-        </div>
         <nav className="block">
           <ul className="flex pl-0 rounded list-none flex-wrap">
             <li>
@@ -36,7 +22,7 @@ export default function Pagination({
                   onClick={() => {
                     paginate(number);
                   }}
-                  href="#"
+                  href="/#"
                   className={
                     currentPage === number
                       ? "bg-blue border-red-300 text-red-500 hover:bg-blue-200 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
