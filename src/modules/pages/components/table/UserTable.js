@@ -14,6 +14,7 @@ import Spinner from "modules/common/components/Spinner";
 import "./table.css";
 import Button from "modules/common/components/Button";
 import ModalDeleteConfirmation from "modules/common/components/ModalDeleteConfirmation";
+import Pagination from "modules/common/components/Pagination";
 
 export default function UserTable() {
   const allUsers = useSelector(getAllUsers);
@@ -22,6 +23,15 @@ export default function UserTable() {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [itemToDeleteId, setItemToDeleteId] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postPerPage, setPostPerPage] = useState(5);
+
+  const indexOfLastPost = currentPage * postPerPage;
+  const indexOfFirstPost = indexOfLastPost - postPerPage;
+
+  const currentPost = allUsers.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const openDeleteModalHandler = (id) => {
     setShowModal(true);
@@ -70,7 +80,7 @@ export default function UserTable() {
             <div className="col-span-12">
               <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
                 <thead className="text-white">
-                  {allUsers.map((index) => (
+                  {currentPost.map((index) => (
                     <>
                       <tr
                         key={index}
@@ -88,7 +98,7 @@ export default function UserTable() {
                   ))}
                 </thead>
                 <tbody className="flex-1 sm:flex-none">
-                  {allUsers.map((item, i) => (
+                  {currentPost.map((item, i) => (
                     <>
                       <tr
                         key={i}
@@ -166,6 +176,14 @@ export default function UserTable() {
                 </tbody>
               </table>
             </div>
+          </div>
+          <div className="flex item-center justify-center">
+            <Pagination
+              postPerPage={postPerPage}
+              totalPosts={allUsers.length}
+              paginate={paginate}
+              currentPage={currentPage}
+            />
           </div>
         </>
       )}
