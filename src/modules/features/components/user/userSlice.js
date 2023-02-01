@@ -17,6 +17,24 @@ export const saveNewUser = createAsyncThunk(
   }
 );
 
+//Update User
+export const updateUser = createAsyncThunk(
+  "users/updateAPI",
+  async (payload) => {
+    const response = await axios.put(
+      `http://localhost:4000/users/${payload.id}`,
+      payload
+    );
+    return response.data;
+  }
+);
+
+//Delete User
+export const deleteUser = createAsyncThunk("users/deleteAPI", async (id) => {
+  const response = await axios.delete(`http://localhost:4000/users/${id}`);
+  return id;
+});
+
 const initialState = {
   usersData: [],
   loading: "idle",
@@ -41,6 +59,23 @@ const userslice = createSlice({
       state.loading = "idle";
       state.usersData.unshift(action.payload);
     });
+    builder.addCase(updateUser.pending, (state) => {
+      state.loading = "pending";
+    });
+    builder.addCase(updateUser.fulfilled, (state, action) => {
+      state.loading = "idle";
+      state.usersData = state.usersData.filter(
+        (_) => _.id !== action.payload.id
+      );
+      state.usersData.unshift(action.payload);
+    });
+    builder.addCase(deleteUser.pending, (state) => {
+      state.loading = "pending";
+    });
+    builder.addCase(deleteUser.fulfilled, (state, action) => {
+      state.loading = "idle";
+      state.usersData = state.usersData.filter((_) => _.id !== action.payload);
+    });
   },
 });
 
@@ -48,5 +83,8 @@ export const { allUsersLoading, allUsersRecieved } = userslice.actions;
 
 export const getAllUsers = (state) => state.user.usersData;
 export const getLoading = (state) => state.user.loading;
+export const getUserById = (id) => {
+  return (state) => state.user.usersData.filter((_) => _.id === id)[0];
+};
 
 export default userslice.reducer;

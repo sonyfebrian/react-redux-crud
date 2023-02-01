@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "modules/pages/components/Layout";
-import ItemCardUser from "modules/pages/components/ItemCardUser";
 import UserTable from "modules/pages/components/table/UserTable";
 import FormCreate from "modules/details/components/FormCreate";
+import FormEdit from "modules/details/components/FormEdit";
 function App() {
   return (
     <div>
@@ -10,7 +10,8 @@ function App() {
         {" "}
         <Routes>
           <Route path="/" element={<UserTable />}></Route>
-          <Route path="/add-user" element={<FormCreate />}></Route>
+          <Route path="/create" element={<FormCreate />}></Route>
+          <Route path="/edit-user/:id" element={<FormEdit />}></Route>
         </Routes>
       </Layout>
     </div>

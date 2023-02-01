@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
+import Select from "react-select";
 import { Controller, useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
 import {
+  getUserById,
   getLoading,
   saveNewUser,
+  updateUser,
 } from "modules/features/components/user/userSlice";
-import { useNavigate } from "react-router-dom";
-import Select from "react-select";
-import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 const userAccessOptions = [
   {
@@ -24,29 +25,29 @@ const userAccessOptions = [
   },
 ];
 
-export default function FormCreate() {
+export default function FormEdit() {
+  const { id } = useParams();
+  const itemToEdit = useSelector(getUserById(Number(id)));
   const { control, handleSubmit } = useForm({
     defaultValues: {
-      firstname: "",
-      lastname: "",
-      username: "",
-      email: "",
-      password: "",
-      currentPassword: "",
-      expiredDate: "",
-      groupAccess: "",
+      firstname: itemToEdit.firstname,
+      lastname: itemToEdit.lastname,
+      username: itemToEdit.username,
+      email: itemToEdit.email,
+      password: itemToEdit.password,
+      currentPassword: itemToEdit.currentPassword,
+      expiredDate: itemToEdit.expiredDate,
+      groupAccess: itemToEdit.groupAccess,
     },
   });
 
   const disptach = useDispatch();
   const navigate = useNavigate();
   const apiStatus = useSelector(getLoading);
-  const [selectedOptions, setSelectedOptions] = useState([]);
 
-  console.log(selectedOptions, "value select");
-  const createNewUser = (data) => {
-    console.log(data, "cek data");
+  const updateUserForm = (data) => {
     let payload = {
+      id: Number(id),
       firstname: data.firstname,
       lastname: data.lastname,
       username: data.username,
@@ -56,25 +57,20 @@ export default function FormCreate() {
       expiredDate: data.expiredDate,
       groupAccess: data.groupAccess.label,
     };
-    disptach(saveNewUser(payload))
+    disptach(updateUser(payload))
       .unwrap()
       .then(() => {
         navigate("/");
       });
   };
 
-  const [startDate, setStartDate] = useState(new Date());
-  const handleChange = (options) => {
-    console.log(options, "option");
-    setSelectedOptions(options);
-  };
   return (
     <>
-      <h1 className="flex items-center justify-center ">Create A New User</h1>
+      <h1 className="flex items-center justify-center ">Update A New User</h1>
       <div className="flex items-center justify-center p-12">
         <div className="mx-auto w-full max-w-[550px]">
           <legend>* All field are required.</legend>
-          <form onSubmit={handleSubmit(createNewUser)}>
+          <form onSubmit={handleSubmit(updateUserForm)}>
             <div className="-mx-3 flex flex-wrap">
               <div className="w-full px-3 sm:w-1/2">
                 <div className="mb-5">
@@ -251,8 +247,11 @@ export default function FormCreate() {
             </div>
 
             <div>
-              <button className="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none">
-                Submit
+              <button
+                className="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
+                disabled={apiStatus === "pending"}
+              >
+                {apiStatus === "pending" ? "Updating........." : "Update"}
               </button>
             </div>
           </form>
